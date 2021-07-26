@@ -1,0 +1,75 @@
+﻿@model MVCStackOverFlow.Models.Question
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>@Html.DisplayFor(model => model.QuestionTitle)</h2>
+<hr />
+<div class="row">
+    <div class="col-lg-1">
+        <button><span class="glyphicon glyphicon-circle-arrow-down"></span></button>
+        <button><span class="glyphicon glyphicon-circle-arrow-down"></span></button>
+    </div>
+    <div class="col-lg-11">
+        @Html.DisplayNameFor(model => model.QuestionBody)
+    </div>
+</div>
+<div>
+    
+    <hr />
+    <dl class="dl-horizontal">
+        @*<dt>
+            @Html.DisplayNameFor(model => model.User.UserName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.User.UserName)
+        </dd>*@
+
+        <dt>
+            @Html.DisplayNameFor(model => model.QuestionTitle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.QuestionTitle)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.QuestionBody)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.QuestionBody)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TotalViews)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TotalViews)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Vote)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Vote)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TimeOfAsk)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TimeOfAsk)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.QuestionID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

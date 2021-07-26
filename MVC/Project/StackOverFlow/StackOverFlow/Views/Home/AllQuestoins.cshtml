@@ -1,0 +1,27 @@
+﻿@model IEnumerable<StackOverFlow.Models.Question>
+
+@{
+    ViewBag.Title = "AllQuestoins";
+}
+
+
+<div>
+    <h2>AllQuestoins</h2>
+    <button class="btn">@Html.ActionLink("Ask Question","Create","Questions")</button>
+    @*<button type="button" onclick="@Htm0l.Action("Create","Questions")" class="btn btn-primary float-right">Ask Question</button>*@
+</div>
+<hr />
+@foreach (var question in Model)
+{
+<div class="row">
+    <div class="col-sm-2">
+        <button class="btn btn-success text-center">@Html.DisplayFor(modelItem => question.Vote)<br /> <small>Votes</small></button>
+        @*<button class="btn btn-success text-center">@Html.DisplayFor(modelItem => question.Answers.Count())<br /> <small>Ans</small></button>*@
+        
+    </div>
+    <div class="col-sm-10">
+        <p>@Html.DisplayFor(modelItem => question.Question1)</p>
+    </div>
+</div>
+}
+

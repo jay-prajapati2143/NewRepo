@@ -1,0 +1,113 @@
+﻿@model IEnumerable<StackOverFlow.Models.User>
+
+@{
+    ViewBag.Title = "AllUsers";
+}
+
+<h2>AllUsers</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<div class="row">
+    @*<div class="col-3">
+        <p> @Html.DisplayFor(model => model.UserName)</p>
+        <p>@Html.DisplayFor(model => model.FullName)</p>
+        <p>@Html.DisplayFor(model => model.Title)</p>
+        
+</div>*@
+</div>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.UserName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FullName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VisitedDays)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GitHub)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Twitter)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Reputaion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Location)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LastSeen)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProfileViews)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AboutUser)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PhoneNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EmailID)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.UserName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FullName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Title)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VisitedDays)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GitHub)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Twitter)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Reputaion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Location)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LastSeen)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ProfileViews)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AboutUser)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PhoneNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EmailID)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.UserID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.UserID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.UserID })
+        </td>
+    </tr>
+}
+
+</table>

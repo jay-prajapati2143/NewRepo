@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="d4f7f145b58e45b1806031d896b27556" Name="Diagram1">
+        <EntityTypeShape EntityType="TempStackOverFlowModel.C__MigrationHistory" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TempStackOverFlowModel.Answer" Width="1.5" PointX="5.25" PointY="24" IsExpanded="true" />
+        <EntityTypeShape EntityType="TempStackOverFlowModel.Badge" Width="1.5" PointX="3.75" PointY="12.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="TempStackOverFlowModel.BadgesEarnedByUser" Width="1.5" PointX="6" PointY="20.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="TempStackOverFlowModel.Bookmark" Width="1.5" PointX="8.25" PointY="24.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="TempStackOverFlowModel.CompaniesToExclude" Width="1.5" PointX="3" PointY="16" IsExpanded="true" />
+        <EntityTypeShape EntityType="TempStackOverFlowModel.Education" Width="1.5" PointX="3" PointY="18.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="TempStackOverFlowModel.IndustriesToExclude" Width="1.5" PointX="3" PointY="21.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TempStackOverFlowModel.JobProfile" Width="1.5" PointX="3" PointY="24.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="TempStackOverFlowModel.Question" Width="1.5" PointX="3" PointY="28" IsExpanded="true" />
+        <EntityTypeShape EntityType="TempStackOverFlowModel.Tag" Width="1.5" PointX="5.25" PointY="28.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="TempStackOverFlowModel.TechnologiesUsedAsStudent" Width="1.5" PointX="3" PointY="31.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TempStackOverFlowModel.TechnologiesUsedByUserInJob" Width="1.5" PointX="3" PointY="34.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="TempStackOverFlowModel.TechPreferNotToWorkWith" Width="1.5" PointX="3" PointY="36.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TempStackOverFlowModel.TechWantToWorkWith" Width="1.5" PointX="3" PointY="39.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="TempStackOverFlowModel.User" Width="1.5" PointX="0.75" PointY="19.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="TempStackOverFlowModel.WhereUserLikeToWork" Width="1.5" PointX="3" PointY="41.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="TempStackOverFlowModel.WorkExperience" Width="1.5" PointX="3" PointY="44.375" IsExpanded="true" />
+        <AssociationConnector Association="TempStackOverFlowModel.FK__Answers__Questio__114A936A" ManuallyRouted="false" />
+        <AssociationConnector Association="TempStackOverFlowModel.Fk_UserIDAnswers" ManuallyRouted="false" />
+        <AssociationConnector Association="TempStackOverFlowModel.Fk_BadgeIDBadge" ManuallyRouted="false" />
+        <AssociationConnector Association="TempStackOverFlowModel.Fk_UserIDBadge" ManuallyRouted="false" />
+        <AssociationConnector Association="TempStackOverFlowModel.FK__Bookmarks__Quest__0B91BA14" ManuallyRouted="false" />
+        <AssociationConnector Association="TempStackOverFlowModel.FK__Bookmarks__UserI__0A9D95DB" ManuallyRouted="false" />
+        <AssociationConnector Association="TempStackOverFlowModel.FK__Companies__UserI__236943A5" ManuallyRouted="false" />
+        <AssociationConnector Association="TempStackOverFlowModel.Fk_UserIDEducation" ManuallyRouted="false" />
+        <AssociationConnector Association="TempStackOverFlowModel.FK__Industrie__UserI__17F790F9" ManuallyRouted="false" />
+        <AssociationConnector Association="TempStackOverFlowModel.FK__JobProfil__UserI__151B244E" ManuallyRouted="false" />
+        <AssociationConnector Association="TempStackOverFlowModel.FK__Tags__QuestionID__0E6E26BF" ManuallyRouted="false" />
+        <AssociationConnector Association="TempStackOverFlowModel.Fk_UserIDQuestion" ManuallyRouted="false" />
+        <AssociationConnector Association="TempStackOverFlowModel.Fk_UserIDTech" ManuallyRouted="false" />
+        <AssociationConnector Association="TempStackOverFlowModel.Fk_UserIDTechInJob" ManuallyRouted="false" />
+        <AssociationConnector Association="TempStackOverFlowModel.FK__TechPrefe__UserI__1AD3FDA4" ManuallyRouted="false" />
+        <AssociationConnector Association="TempStackOverFlowModel.FK__TechWantT__UserI__1DB06A4F" ManuallyRouted="false" />
+        <AssociationConnector Association="TempStackOverFlowModel.FK__WhereUser__UserI__208CD6FA" ManuallyRouted="false" />
+        <AssociationConnector Association="TempStackOverFlowModel.Fk_UserIDWork" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

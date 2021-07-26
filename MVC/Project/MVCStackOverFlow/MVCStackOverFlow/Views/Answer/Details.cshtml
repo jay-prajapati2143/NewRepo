@@ -1,0 +1,50 @@
+﻿@model MVCStackOverFlow.Models.Answer
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Answer</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Question.QuestionTitle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Question.QuestionTitle)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.User.UserName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.User.UserName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AnswerBody)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AnswerBody)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Vote)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Vote)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.AnswerID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

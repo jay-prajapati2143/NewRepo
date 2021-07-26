@@ -1,0 +1,1523 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="TempStackOverFlowModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="__MigrationHistory">
+          <Key>
+            <PropertyRef Name="MigrationId" />
+            <PropertyRef Name="ContextKey" />
+          </Key>
+          <Property Name="MigrationId" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="ContextKey" Type="nvarchar" MaxLength="300" Nullable="false" />
+          <Property Name="Model" Type="varbinary(max)" Nullable="false" />
+          <Property Name="ProductVersion" Type="nvarchar" MaxLength="32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Answers">
+          <Key>
+            <PropertyRef Name="AnswerID" />
+          </Key>
+          <Property Name="AnswerID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="QuestionID" Type="int" />
+          <Property Name="UserID" Type="int" />
+          <Property Name="Answer" Type="varchar(max)" />
+          <Property Name="Vote" Type="int" />
+        </EntityType>
+        <EntityType Name="AspNetRoles">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="256" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AspNetUserClaims">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="ClaimType" Type="nvarchar(max)" />
+          <Property Name="ClaimValue" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="AspNetUserLogins">
+          <Key>
+            <PropertyRef Name="LoginProvider" />
+            <PropertyRef Name="ProviderKey" />
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="LoginProvider" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="ProviderKey" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AspNetUserRoles">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="RoleId" Type="nvarchar" MaxLength="128" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AspNetUsers">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="Email" Type="nvarchar" MaxLength="256" />
+          <Property Name="EmailConfirmed" Type="bit" Nullable="false" />
+          <Property Name="PasswordHash" Type="nvarchar(max)" />
+          <Property Name="SecurityStamp" Type="nvarchar(max)" />
+          <Property Name="PhoneNumber" Type="nvarchar(max)" />
+          <Property Name="PhoneNumberConfirmed" Type="bit" Nullable="false" />
+          <Property Name="TwoFactorEnabled" Type="bit" Nullable="false" />
+          <Property Name="LockoutEndDateUtc" Type="datetime" />
+          <Property Name="LockoutEnabled" Type="bit" Nullable="false" />
+          <Property Name="AccessFailedCount" Type="int" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="256" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Badges">
+          <Key>
+            <PropertyRef Name="BadgeID" />
+          </Key>
+          <Property Name="BadgeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="BadgeName" Type="varchar" MaxLength="30" />
+          <Property Name="BadgeCategory" Type="varchar" MaxLength="30" />
+          <Property Name="BadgeDescription" Type="varchar" MaxLength="200" />
+          <Property Name="BadgeType" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="BadgesEarnedByUser">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserID" Type="int" />
+          <Property Name="BadgeID" Type="int" />
+          <Property Name="DateOfEarned" Type="date" />
+        </EntityType>
+        <EntityType Name="Bookmarks">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserID" Type="int" />
+          <Property Name="QuestionID" Type="int" />
+        </EntityType>
+        <EntityType Name="CompaniesToExclude">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserID" Type="int" />
+          <Property Name="CompanyToExclude" Type="varchar" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="Education">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserID" Type="int" />
+          <Property Name="Degree" Type="varchar" MaxLength="30" />
+          <Property Name="University" Type="varchar" MaxLength="50" />
+          <Property Name="FromYear" Type="int" />
+          <Property Name="ToYear" Type="int" />
+          <Property Name="Summary" Type="varchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="IndustriesToExclude">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserID" Type="int" />
+          <Property Name="IndustryToExclude" Type="varchar" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="JobProfile">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserID" Type="int" />
+          <Property Name="JobType" Type="varchar" MaxLength="30" />
+          <Property Name="Role" Type="varchar" MaxLength="30" />
+          <Property Name="JobSearchStatus" Type="varchar" MaxLength="50" />
+          <Property Name="Industry" Type="varchar" MaxLength="30" />
+          <Property Name="MinAnnualSalary" Type="money" />
+          <Property Name="MinExperience" Type="int" />
+          <Property Name="MaxExperience" Type="int" />
+        </EntityType>
+        <EntityType Name="Questions">
+          <Key>
+            <PropertyRef Name="QuestionID" />
+          </Key>
+          <Property Name="QuestionID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserID" Type="int" />
+          <Property Name="Question" Type="varchar" MaxLength="500" />
+          <Property Name="TotalViews" Type="int" />
+          <Property Name="Vote" Type="int" />
+          <Property Name="TimeOfAsk" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Tags">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="QuestionID" Type="int" />
+          <Property Name="TagName" Type="nvarchar" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="TechnologiesUsedAsStudent">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserID" Type="int" />
+          <Property Name="Technology" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="TechnologiesUsedByUserInJob">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserID" Type="int" />
+          <Property Name="Technologies" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="TechPreferNotToWorkWith">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserID" Type="int" />
+          <Property Name="TechPeferNotToWorkWith" Type="nvarchar" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="TechWantToWorkWith">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserID" Type="int" />
+          <Property Name="TechYouWantToWorkWith" Type="nvarchar" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserName" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="FullName" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="Title" Type="varchar" MaxLength="20" />
+          <Property Name="VisitedDays" Type="int" />
+          <Property Name="GitHub" Type="varchar" MaxLength="100" />
+          <Property Name="Twitter" Type="varchar" MaxLength="100" />
+          <Property Name="Reputaion" Type="int" />
+          <Property Name="Location" Type="varchar" MaxLength="50" />
+          <Property Name="LastSeen" Type="datetime" />
+          <Property Name="ProfileViews" Type="int" />
+          <Property Name="AboutUser" Type="varchar" MaxLength="200" />
+          <Property Name="PhoneNumber" Type="varchar" MaxLength="10" />
+          <Property Name="EmailID" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="WhereUserLikeToWork">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserID" Type="int" />
+          <Property Name="Location" Type="varchar" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="WorkExperience">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserID" Type="int" />
+          <Property Name="JobTitle" Type="varchar" MaxLength="30" />
+          <Property Name="CompanyName" Type="varchar" MaxLength="30" />
+          <Property Name="YearOfJoinning" Type="int" />
+          <Property Name="Responsibilities" Type="varchar" MaxLength="200" />
+        </EntityType>
+        <Association Name="FK__Answers__Questio__114A936A">
+          <End Role="Questions" Type="Self.Questions" Multiplicity="0..1" />
+          <End Role="Answers" Type="Self.Answers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Questions">
+              <PropertyRef Name="QuestionID" />
+            </Principal>
+            <Dependent Role="Answers">
+              <PropertyRef Name="QuestionID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Bookmarks__Quest__0B91BA14">
+          <End Role="Questions" Type="Self.Questions" Multiplicity="0..1" />
+          <End Role="Bookmarks" Type="Self.Bookmarks" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Questions">
+              <PropertyRef Name="QuestionID" />
+            </Principal>
+            <Dependent Role="Bookmarks">
+              <PropertyRef Name="QuestionID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Bookmarks__UserI__0A9D95DB">
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="Bookmarks" Type="Self.Bookmarks" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="Bookmarks">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Companies__UserI__236943A5">
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="CompaniesToExclude" Type="Self.CompaniesToExclude" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="CompaniesToExclude">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Industrie__UserI__17F790F9">
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="IndustriesToExclude" Type="Self.IndustriesToExclude" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="IndustriesToExclude">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__JobProfil__UserI__151B244E">
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="JobProfile" Type="Self.JobProfile" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="JobProfile">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Tags__QuestionID__0E6E26BF">
+          <End Role="Questions" Type="Self.Questions" Multiplicity="0..1" />
+          <End Role="Tags" Type="Self.Tags" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Questions">
+              <PropertyRef Name="QuestionID" />
+            </Principal>
+            <Dependent Role="Tags">
+              <PropertyRef Name="QuestionID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TechPrefe__UserI__1AD3FDA4">
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="TechPreferNotToWorkWith" Type="Self.TechPreferNotToWorkWith" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="TechPreferNotToWorkWith">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TechWantT__UserI__1DB06A4F">
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="TechWantToWorkWith" Type="Self.TechWantToWorkWith" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="TechWantToWorkWith">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__WhereUser__UserI__208CD6FA">
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="WhereUserLikeToWork" Type="Self.WhereUserLikeToWork" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="WhereUserLikeToWork">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Fk_BadgeIDBadge">
+          <End Role="Badges" Type="Self.Badges" Multiplicity="0..1" />
+          <End Role="BadgesEarnedByUser" Type="Self.BadgesEarnedByUser" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Badges">
+              <PropertyRef Name="BadgeID" />
+            </Principal>
+            <Dependent Role="BadgesEarnedByUser">
+              <PropertyRef Name="BadgeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetUserClaims" Type="Self.AspNetUserClaims" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserClaims">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetUserLogins" Type="Self.AspNetUserLogins" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserLogins">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId">
+          <End Role="AspNetRoles" Type="Self.AspNetRoles" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetUserRoles" Type="Self.AspNetUserRoles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetRoles">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserRoles">
+              <PropertyRef Name="RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId">
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetUserRoles" Type="Self.AspNetUserRoles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserRoles">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Fk_UserIDAnswers">
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="Answers" Type="Self.Answers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="Answers">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Fk_UserIDBadge">
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="BadgesEarnedByUser" Type="Self.BadgesEarnedByUser" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="BadgesEarnedByUser">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Fk_UserIDEducation">
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="Education" Type="Self.Education" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="Education">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Fk_UserIDQuestion">
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="Questions" Type="Self.Questions" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="Questions">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Fk_UserIDTech">
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="TechnologiesUsedAsStudent" Type="Self.TechnologiesUsedAsStudent" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="TechnologiesUsedAsStudent">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Fk_UserIDTechInJob">
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="TechnologiesUsedByUserInJob" Type="Self.TechnologiesUsedByUserInJob" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="TechnologiesUsedByUserInJob">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Fk_UserIDWork">
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="WorkExperience" Type="Self.WorkExperience" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="WorkExperience">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="TempStackOverFlowModelStoreContainer">
+          <EntitySet Name="__MigrationHistory" EntityType="Self.__MigrationHistory" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Answers" EntityType="Self.Answers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AspNetRoles" EntityType="Self.AspNetRoles" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AspNetUserClaims" EntityType="Self.AspNetUserClaims" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AspNetUserLogins" EntityType="Self.AspNetUserLogins" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AspNetUserRoles" EntityType="Self.AspNetUserRoles" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AspNetUsers" EntityType="Self.AspNetUsers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Badges" EntityType="Self.Badges" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BadgesEarnedByUser" EntityType="Self.BadgesEarnedByUser" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Bookmarks" EntityType="Self.Bookmarks" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CompaniesToExclude" EntityType="Self.CompaniesToExclude" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Education" EntityType="Self.Education" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="IndustriesToExclude" EntityType="Self.IndustriesToExclude" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="JobProfile" EntityType="Self.JobProfile" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Questions" EntityType="Self.Questions" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tags" EntityType="Self.Tags" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TechnologiesUsedAsStudent" EntityType="Self.TechnologiesUsedAsStudent" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TechnologiesUsedByUserInJob" EntityType="Self.TechnologiesUsedByUserInJob" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TechPreferNotToWorkWith" EntityType="Self.TechPreferNotToWorkWith" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TechWantToWorkWith" EntityType="Self.TechWantToWorkWith" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="WhereUserLikeToWork" EntityType="Self.WhereUserLikeToWork" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="WorkExperience" EntityType="Self.WorkExperience" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__Answers__Questio__114A936A" Association="Self.FK__Answers__Questio__114A936A">
+            <End Role="Questions" EntitySet="Questions" />
+            <End Role="Answers" EntitySet="Answers" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Bookmarks__Quest__0B91BA14" Association="Self.FK__Bookmarks__Quest__0B91BA14">
+            <End Role="Questions" EntitySet="Questions" />
+            <End Role="Bookmarks" EntitySet="Bookmarks" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Bookmarks__UserI__0A9D95DB" Association="Self.FK__Bookmarks__UserI__0A9D95DB">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Bookmarks" EntitySet="Bookmarks" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Companies__UserI__236943A5" Association="Self.FK__Companies__UserI__236943A5">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="CompaniesToExclude" EntitySet="CompaniesToExclude" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Industrie__UserI__17F790F9" Association="Self.FK__Industrie__UserI__17F790F9">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="IndustriesToExclude" EntitySet="IndustriesToExclude" />
+          </AssociationSet>
+          <AssociationSet Name="FK__JobProfil__UserI__151B244E" Association="Self.FK__JobProfil__UserI__151B244E">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="JobProfile" EntitySet="JobProfile" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Tags__QuestionID__0E6E26BF" Association="Self.FK__Tags__QuestionID__0E6E26BF">
+            <End Role="Questions" EntitySet="Questions" />
+            <End Role="Tags" EntitySet="Tags" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TechPrefe__UserI__1AD3FDA4" Association="Self.FK__TechPrefe__UserI__1AD3FDA4">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="TechPreferNotToWorkWith" EntitySet="TechPreferNotToWorkWith" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TechWantT__UserI__1DB06A4F" Association="Self.FK__TechWantT__UserI__1DB06A4F">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="TechWantToWorkWith" EntitySet="TechWantToWorkWith" />
+          </AssociationSet>
+          <AssociationSet Name="FK__WhereUser__UserI__208CD6FA" Association="Self.FK__WhereUser__UserI__208CD6FA">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="WhereUserLikeToWork" EntitySet="WhereUserLikeToWork" />
+          </AssociationSet>
+          <AssociationSet Name="Fk_BadgeIDBadge" Association="Self.Fk_BadgeIDBadge">
+            <End Role="Badges" EntitySet="Badges" />
+            <End Role="BadgesEarnedByUser" EntitySet="BadgesEarnedByUser" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="AspNetUserClaims" EntitySet="AspNetUserClaims" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="AspNetUserLogins" EntitySet="AspNetUserLogins" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId" Association="Self.FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId">
+            <End Role="AspNetRoles" EntitySet="AspNetRoles" />
+            <End Role="AspNetUserRoles" EntitySet="AspNetUserRoles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="AspNetUserRoles" EntitySet="AspNetUserRoles" />
+          </AssociationSet>
+          <AssociationSet Name="Fk_UserIDAnswers" Association="Self.Fk_UserIDAnswers">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Answers" EntitySet="Answers" />
+          </AssociationSet>
+          <AssociationSet Name="Fk_UserIDBadge" Association="Self.Fk_UserIDBadge">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="BadgesEarnedByUser" EntitySet="BadgesEarnedByUser" />
+          </AssociationSet>
+          <AssociationSet Name="Fk_UserIDEducation" Association="Self.Fk_UserIDEducation">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Education" EntitySet="Education" />
+          </AssociationSet>
+          <AssociationSet Name="Fk_UserIDQuestion" Association="Self.Fk_UserIDQuestion">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Questions" EntitySet="Questions" />
+          </AssociationSet>
+          <AssociationSet Name="Fk_UserIDTech" Association="Self.Fk_UserIDTech">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="TechnologiesUsedAsStudent" EntitySet="TechnologiesUsedAsStudent" />
+          </AssociationSet>
+          <AssociationSet Name="Fk_UserIDTechInJob" Association="Self.Fk_UserIDTechInJob">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="TechnologiesUsedByUserInJob" EntitySet="TechnologiesUsedByUserInJob" />
+          </AssociationSet>
+          <AssociationSet Name="Fk_UserIDWork" Association="Self.Fk_UserIDWork">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="WorkExperience" EntitySet="WorkExperience" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="TempStackOverFlowModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="C__MigrationHistory">
+          <Key>
+            <PropertyRef Name="MigrationId" />
+            <PropertyRef Name="ContextKey" />
+          </Key>
+          <Property Name="MigrationId" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ContextKey" Type="String" MaxLength="300" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Model" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+          <Property Name="ProductVersion" Type="String" MaxLength="32" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Answer">
+          <Key>
+            <PropertyRef Name="AnswerID" />
+          </Key>
+          <Property Name="AnswerID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="QuestionID" Type="Int32" />
+          <Property Name="UserID" Type="Int32" />
+          <Property Name="Answer1" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Vote" Type="Int32" />
+          <NavigationProperty Name="Question" Relationship="Self.FK__Answers__Questio__114A936A" FromRole="Answers" ToRole="Questions" />
+          <NavigationProperty Name="User" Relationship="Self.Fk_UserIDAnswers" FromRole="Answers" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="AspNetRole">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="AspNetUsers" Relationship="Self.AspNetUserRoles" FromRole="AspNetRoles" ToRole="AspNetUsers" />
+        </EntityType>
+        <EntityType Name="AspNetUserClaim">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserId" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ClaimType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ClaimValue" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="AspNetUser" Relationship="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" FromRole="AspNetUserClaims" ToRole="AspNetUsers" />
+        </EntityType>
+        <EntityType Name="AspNetUserLogin">
+          <Key>
+            <PropertyRef Name="LoginProvider" />
+            <PropertyRef Name="ProviderKey" />
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="LoginProvider" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ProviderKey" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="UserId" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="AspNetUser" Relationship="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" FromRole="AspNetUserLogins" ToRole="AspNetUsers" />
+        </EntityType>
+        <EntityType Name="AspNetUser">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="EmailConfirmed" Type="Boolean" Nullable="false" />
+          <Property Name="PasswordHash" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SecurityStamp" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PhoneNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PhoneNumberConfirmed" Type="Boolean" Nullable="false" />
+          <Property Name="TwoFactorEnabled" Type="Boolean" Nullable="false" />
+          <Property Name="LockoutEndDateUtc" Type="DateTime" Precision="3" />
+          <Property Name="LockoutEnabled" Type="Boolean" Nullable="false" />
+          <Property Name="AccessFailedCount" Type="Int32" Nullable="false" />
+          <Property Name="UserName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="AspNetUserClaims" Relationship="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" FromRole="AspNetUsers" ToRole="AspNetUserClaims" />
+          <NavigationProperty Name="AspNetUserLogins" Relationship="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" FromRole="AspNetUsers" ToRole="AspNetUserLogins" />
+          <NavigationProperty Name="AspNetRoles" Relationship="Self.AspNetUserRoles" FromRole="AspNetUsers" ToRole="AspNetRoles" />
+        </EntityType>
+        <EntityType Name="Badge">
+          <Key>
+            <PropertyRef Name="BadgeID" />
+          </Key>
+          <Property Name="BadgeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="BadgeName" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="BadgeCategory" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="BadgeDescription" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="BadgeType" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="BadgesEarnedByUsers" Relationship="Self.Fk_BadgeIDBadge" FromRole="Badges" ToRole="BadgesEarnedByUser" />
+        </EntityType>
+        <EntityType Name="BadgesEarnedByUser">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserID" Type="Int32" />
+          <Property Name="BadgeID" Type="Int32" />
+          <Property Name="DateOfEarned" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="Badge" Relationship="Self.Fk_BadgeIDBadge" FromRole="BadgesEarnedByUser" ToRole="Badges" />
+          <NavigationProperty Name="User" Relationship="Self.Fk_UserIDBadge" FromRole="BadgesEarnedByUser" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="Bookmark">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserID" Type="Int32" />
+          <Property Name="QuestionID" Type="Int32" />
+          <NavigationProperty Name="Question" Relationship="Self.FK__Bookmarks__Quest__0B91BA14" FromRole="Bookmarks" ToRole="Questions" />
+          <NavigationProperty Name="User" Relationship="Self.FK__Bookmarks__UserI__0A9D95DB" FromRole="Bookmarks" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="CompaniesToExclude">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserID" Type="Int32" />
+          <Property Name="CompanyToExclude" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="User" Relationship="Self.FK__Companies__UserI__236943A5" FromRole="CompaniesToExclude" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="Education">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserID" Type="Int32" />
+          <Property Name="Degree" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="University" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FromYear" Type="Int32" />
+          <Property Name="ToYear" Type="Int32" />
+          <Property Name="Summary" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="User" Relationship="Self.Fk_UserIDEducation" FromRole="Education" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="IndustriesToExclude">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserID" Type="Int32" />
+          <Property Name="IndustryToExclude" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="User" Relationship="Self.FK__Industrie__UserI__17F790F9" FromRole="IndustriesToExclude" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="JobProfile">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserID" Type="Int32" />
+          <Property Name="JobType" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Role" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="JobSearchStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Industry" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="MinAnnualSalary" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="MinExperience" Type="Int32" />
+          <Property Name="MaxExperience" Type="Int32" />
+          <NavigationProperty Name="User" Relationship="Self.FK__JobProfil__UserI__151B244E" FromRole="JobProfile" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="Question">
+          <Key>
+            <PropertyRef Name="QuestionID" />
+          </Key>
+          <Property Name="QuestionID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserID" Type="Int32" />
+          <Property Name="Question1" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="TotalViews" Type="Int32" />
+          <Property Name="Vote" Type="Int32" />
+          <Property Name="TimeOfAsk" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Answers" Relationship="Self.FK__Answers__Questio__114A936A" FromRole="Questions" ToRole="Answers" />
+          <NavigationProperty Name="Bookmarks" Relationship="Self.FK__Bookmarks__Quest__0B91BA14" FromRole="Questions" ToRole="Bookmarks" />
+          <NavigationProperty Name="Tags" Relationship="Self.FK__Tags__QuestionID__0E6E26BF" FromRole="Questions" ToRole="Tags" />
+          <NavigationProperty Name="User" Relationship="Self.Fk_UserIDQuestion" FromRole="Questions" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="Tag">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="QuestionID" Type="Int32" />
+          <Property Name="TagName" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Question" Relationship="Self.FK__Tags__QuestionID__0E6E26BF" FromRole="Tags" ToRole="Questions" />
+        </EntityType>
+        <EntityType Name="TechnologiesUsedAsStudent">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserID" Type="Int32" />
+          <Property Name="Technology" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="User" Relationship="Self.Fk_UserIDTech" FromRole="TechnologiesUsedAsStudent" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="TechnologiesUsedByUserInJob">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserID" Type="Int32" />
+          <Property Name="Technologies" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="User" Relationship="Self.Fk_UserIDTechInJob" FromRole="TechnologiesUsedByUserInJob" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="TechPreferNotToWorkWith">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserID" Type="Int32" />
+          <Property Name="TechPeferNotToWorkWith" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="User" Relationship="Self.FK__TechPrefe__UserI__1AD3FDA4" FromRole="TechPreferNotToWorkWith" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="TechWantToWorkWith">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserID" Type="Int32" />
+          <Property Name="TechYouWantToWorkWith" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="User" Relationship="Self.FK__TechWantT__UserI__1DB06A4F" FromRole="TechWantToWorkWith" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserName" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FullName" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Title" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="VisitedDays" Type="Int32" />
+          <Property Name="GitHub" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Twitter" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Reputaion" Type="Int32" />
+          <Property Name="Location" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="LastSeen" Type="DateTime" Precision="3" />
+          <Property Name="ProfileViews" Type="Int32" />
+          <Property Name="AboutUser" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="PhoneNumber" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="EmailID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Answers" Relationship="Self.Fk_UserIDAnswers" FromRole="Users" ToRole="Answers" />
+          <NavigationProperty Name="BadgesEarnedByUsers" Relationship="Self.Fk_UserIDBadge" FromRole="Users" ToRole="BadgesEarnedByUser" />
+          <NavigationProperty Name="Bookmarks" Relationship="Self.FK__Bookmarks__UserI__0A9D95DB" FromRole="Users" ToRole="Bookmarks" />
+          <NavigationProperty Name="CompaniesToExcludes" Relationship="Self.FK__Companies__UserI__236943A5" FromRole="Users" ToRole="CompaniesToExclude" />
+          <NavigationProperty Name="Educations" Relationship="Self.Fk_UserIDEducation" FromRole="Users" ToRole="Education" />
+          <NavigationProperty Name="IndustriesToExcludes" Relationship="Self.FK__Industrie__UserI__17F790F9" FromRole="Users" ToRole="IndustriesToExclude" />
+          <NavigationProperty Name="JobProfiles" Relationship="Self.FK__JobProfil__UserI__151B244E" FromRole="Users" ToRole="JobProfile" />
+          <NavigationProperty Name="Questions" Relationship="Self.Fk_UserIDQuestion" FromRole="Users" ToRole="Questions" />
+          <NavigationProperty Name="TechnologiesUsedAsStudents" Relationship="Self.Fk_UserIDTech" FromRole="Users" ToRole="TechnologiesUsedAsStudent" />
+          <NavigationProperty Name="TechnologiesUsedByUserInJobs" Relationship="Self.Fk_UserIDTechInJob" FromRole="Users" ToRole="TechnologiesUsedByUserInJob" />
+          <NavigationProperty Name="TechPreferNotToWorkWiths" Relationship="Self.FK__TechPrefe__UserI__1AD3FDA4" FromRole="Users" ToRole="TechPreferNotToWorkWith" />
+          <NavigationProperty Name="TechWantToWorkWiths" Relationship="Self.FK__TechWantT__UserI__1DB06A4F" FromRole="Users" ToRole="TechWantToWorkWith" />
+          <NavigationProperty Name="WhereUserLikeToWorks" Relationship="Self.FK__WhereUser__UserI__208CD6FA" FromRole="Users" ToRole="WhereUserLikeToWork" />
+          <NavigationProperty Name="WorkExperiences" Relationship="Self.Fk_UserIDWork" FromRole="Users" ToRole="WorkExperience" />
+        </EntityType>
+        <EntityType Name="WhereUserLikeToWork">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserID" Type="Int32" />
+          <Property Name="Location" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="User" Relationship="Self.FK__WhereUser__UserI__208CD6FA" FromRole="WhereUserLikeToWork" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="WorkExperience">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserID" Type="Int32" />
+          <Property Name="JobTitle" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="CompanyName" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="YearOfJoinning" Type="Int32" />
+          <Property Name="Responsibilities" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="User" Relationship="Self.Fk_UserIDWork" FromRole="WorkExperience" ToRole="Users" />
+        </EntityType>
+        <Association Name="FK__Answers__Questio__114A936A">
+          <End Role="Questions" Type="Self.Question" Multiplicity="0..1" />
+          <End Role="Answers" Type="Self.Answer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Questions">
+              <PropertyRef Name="QuestionID" />
+            </Principal>
+            <Dependent Role="Answers">
+              <PropertyRef Name="QuestionID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Fk_UserIDAnswers">
+          <End Role="Users" Type="Self.User" Multiplicity="0..1" />
+          <End Role="Answers" Type="Self.Answer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="Answers">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+          <End Role="AspNetUsers" Type="Self.AspNetUser" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetUserClaims" Type="Self.AspNetUserClaim" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserClaims">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+          <End Role="AspNetUsers" Type="Self.AspNetUser" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetUserLogins" Type="Self.AspNetUserLogin" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserLogins">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Fk_BadgeIDBadge">
+          <End Role="Badges" Type="Self.Badge" Multiplicity="0..1" />
+          <End Role="BadgesEarnedByUser" Type="Self.BadgesEarnedByUser" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Badges">
+              <PropertyRef Name="BadgeID" />
+            </Principal>
+            <Dependent Role="BadgesEarnedByUser">
+              <PropertyRef Name="BadgeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Fk_UserIDBadge">
+          <End Role="Users" Type="Self.User" Multiplicity="0..1" />
+          <End Role="BadgesEarnedByUser" Type="Self.BadgesEarnedByUser" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="BadgesEarnedByUser">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Bookmarks__Quest__0B91BA14">
+          <End Role="Questions" Type="Self.Question" Multiplicity="0..1" />
+          <End Role="Bookmarks" Type="Self.Bookmark" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Questions">
+              <PropertyRef Name="QuestionID" />
+            </Principal>
+            <Dependent Role="Bookmarks">
+              <PropertyRef Name="QuestionID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Bookmarks__UserI__0A9D95DB">
+          <End Role="Users" Type="Self.User" Multiplicity="0..1" />
+          <End Role="Bookmarks" Type="Self.Bookmark" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="Bookmarks">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Companies__UserI__236943A5">
+          <End Role="Users" Type="Self.User" Multiplicity="0..1" />
+          <End Role="CompaniesToExclude" Type="Self.CompaniesToExclude" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="CompaniesToExclude">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Fk_UserIDEducation">
+          <End Role="Users" Type="Self.User" Multiplicity="0..1" />
+          <End Role="Education" Type="Self.Education" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="Education">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Industrie__UserI__17F790F9">
+          <End Role="Users" Type="Self.User" Multiplicity="0..1" />
+          <End Role="IndustriesToExclude" Type="Self.IndustriesToExclude" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="IndustriesToExclude">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__JobProfil__UserI__151B244E">
+          <End Role="Users" Type="Self.User" Multiplicity="0..1" />
+          <End Role="JobProfile" Type="Self.JobProfile" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="JobProfile">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Tags__QuestionID__0E6E26BF">
+          <End Role="Questions" Type="Self.Question" Multiplicity="0..1" />
+          <End Role="Tags" Type="Self.Tag" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Questions">
+              <PropertyRef Name="QuestionID" />
+            </Principal>
+            <Dependent Role="Tags">
+              <PropertyRef Name="QuestionID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Fk_UserIDQuestion">
+          <End Role="Users" Type="Self.User" Multiplicity="0..1" />
+          <End Role="Questions" Type="Self.Question" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="Questions">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Fk_UserIDTech">
+          <End Role="Users" Type="Self.User" Multiplicity="0..1" />
+          <End Role="TechnologiesUsedAsStudent" Type="Self.TechnologiesUsedAsStudent" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="TechnologiesUsedAsStudent">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Fk_UserIDTechInJob">
+          <End Role="Users" Type="Self.User" Multiplicity="0..1" />
+          <End Role="TechnologiesUsedByUserInJob" Type="Self.TechnologiesUsedByUserInJob" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="TechnologiesUsedByUserInJob">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TechPrefe__UserI__1AD3FDA4">
+          <End Role="Users" Type="Self.User" Multiplicity="0..1" />
+          <End Role="TechPreferNotToWorkWith" Type="Self.TechPreferNotToWorkWith" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="TechPreferNotToWorkWith">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TechWantT__UserI__1DB06A4F">
+          <End Role="Users" Type="Self.User" Multiplicity="0..1" />
+          <End Role="TechWantToWorkWith" Type="Self.TechWantToWorkWith" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="TechWantToWorkWith">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__WhereUser__UserI__208CD6FA">
+          <End Role="Users" Type="Self.User" Multiplicity="0..1" />
+          <End Role="WhereUserLikeToWork" Type="Self.WhereUserLikeToWork" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="WhereUserLikeToWork">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Fk_UserIDWork">
+          <End Role="Users" Type="Self.User" Multiplicity="0..1" />
+          <End Role="WorkExperience" Type="Self.WorkExperience" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="WorkExperience">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="AspNetUserRoles">
+          <End Role="AspNetRoles" Type="Self.AspNetRole" Multiplicity="*" />
+          <End Role="AspNetUsers" Type="Self.AspNetUser" Multiplicity="*" />
+        </Association>
+        <EntityContainer Name="TempStackOverFlowEntities3" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="C__MigrationHistory" EntityType="Self.C__MigrationHistory" />
+          <EntitySet Name="Answers" EntityType="Self.Answer" />
+          <EntitySet Name="AspNetRoles" EntityType="Self.AspNetRole" />
+          <EntitySet Name="AspNetUserClaims" EntityType="Self.AspNetUserClaim" />
+          <EntitySet Name="AspNetUserLogins" EntityType="Self.AspNetUserLogin" />
+          <EntitySet Name="AspNetUsers" EntityType="Self.AspNetUser" />
+          <EntitySet Name="Badges" EntityType="Self.Badge" />
+          <EntitySet Name="BadgesEarnedByUsers" EntityType="Self.BadgesEarnedByUser" />
+          <EntitySet Name="Bookmarks" EntityType="Self.Bookmark" />
+          <EntitySet Name="CompaniesToExcludes" EntityType="Self.CompaniesToExclude" />
+          <EntitySet Name="Educations" EntityType="Self.Education" />
+          <EntitySet Name="IndustriesToExcludes" EntityType="Self.IndustriesToExclude" />
+          <EntitySet Name="JobProfiles" EntityType="Self.JobProfile" />
+          <EntitySet Name="Questions" EntityType="Self.Question" />
+          <EntitySet Name="Tags" EntityType="Self.Tag" />
+          <EntitySet Name="TechnologiesUsedAsStudents" EntityType="Self.TechnologiesUsedAsStudent" />
+          <EntitySet Name="TechnologiesUsedByUserInJobs" EntityType="Self.TechnologiesUsedByUserInJob" />
+          <EntitySet Name="TechPreferNotToWorkWiths" EntityType="Self.TechPreferNotToWorkWith" />
+          <EntitySet Name="TechWantToWorkWiths" EntityType="Self.TechWantToWorkWith" />
+          <EntitySet Name="Users" EntityType="Self.User" />
+          <EntitySet Name="WhereUserLikeToWorks" EntityType="Self.WhereUserLikeToWork" />
+          <EntitySet Name="WorkExperiences" EntityType="Self.WorkExperience" />
+          <AssociationSet Name="FK__Answers__Questio__114A936A" Association="Self.FK__Answers__Questio__114A936A">
+            <End Role="Questions" EntitySet="Questions" />
+            <End Role="Answers" EntitySet="Answers" />
+          </AssociationSet>
+          <AssociationSet Name="Fk_UserIDAnswers" Association="Self.Fk_UserIDAnswers">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Answers" EntitySet="Answers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="AspNetUserClaims" EntitySet="AspNetUserClaims" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="AspNetUserLogins" EntitySet="AspNetUserLogins" />
+          </AssociationSet>
+          <AssociationSet Name="Fk_BadgeIDBadge" Association="Self.Fk_BadgeIDBadge">
+            <End Role="Badges" EntitySet="Badges" />
+            <End Role="BadgesEarnedByUser" EntitySet="BadgesEarnedByUsers" />
+          </AssociationSet>
+          <AssociationSet Name="Fk_UserIDBadge" Association="Self.Fk_UserIDBadge">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="BadgesEarnedByUser" EntitySet="BadgesEarnedByUsers" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Bookmarks__Quest__0B91BA14" Association="Self.FK__Bookmarks__Quest__0B91BA14">
+            <End Role="Questions" EntitySet="Questions" />
+            <End Role="Bookmarks" EntitySet="Bookmarks" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Bookmarks__UserI__0A9D95DB" Association="Self.FK__Bookmarks__UserI__0A9D95DB">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Bookmarks" EntitySet="Bookmarks" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Companies__UserI__236943A5" Association="Self.FK__Companies__UserI__236943A5">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="CompaniesToExclude" EntitySet="CompaniesToExcludes" />
+          </AssociationSet>
+          <AssociationSet Name="Fk_UserIDEducation" Association="Self.Fk_UserIDEducation">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Education" EntitySet="Educations" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Industrie__UserI__17F790F9" Association="Self.FK__Industrie__UserI__17F790F9">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="IndustriesToExclude" EntitySet="IndustriesToExcludes" />
+          </AssociationSet>
+          <AssociationSet Name="FK__JobProfil__UserI__151B244E" Association="Self.FK__JobProfil__UserI__151B244E">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="JobProfile" EntitySet="JobProfiles" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Tags__QuestionID__0E6E26BF" Association="Self.FK__Tags__QuestionID__0E6E26BF">
+            <End Role="Questions" EntitySet="Questions" />
+            <End Role="Tags" EntitySet="Tags" />
+          </AssociationSet>
+          <AssociationSet Name="Fk_UserIDQuestion" Association="Self.Fk_UserIDQuestion">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Questions" EntitySet="Questions" />
+          </AssociationSet>
+          <AssociationSet Name="Fk_UserIDTech" Association="Self.Fk_UserIDTech">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="TechnologiesUsedAsStudent" EntitySet="TechnologiesUsedAsStudents" />
+          </AssociationSet>
+          <AssociationSet Name="Fk_UserIDTechInJob" Association="Self.Fk_UserIDTechInJob">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="TechnologiesUsedByUserInJob" EntitySet="TechnologiesUsedByUserInJobs" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TechPrefe__UserI__1AD3FDA4" Association="Self.FK__TechPrefe__UserI__1AD3FDA4">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="TechPreferNotToWorkWith" EntitySet="TechPreferNotToWorkWiths" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TechWantT__UserI__1DB06A4F" Association="Self.FK__TechWantT__UserI__1DB06A4F">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="TechWantToWorkWith" EntitySet="TechWantToWorkWiths" />
+          </AssociationSet>
+          <AssociationSet Name="FK__WhereUser__UserI__208CD6FA" Association="Self.FK__WhereUser__UserI__208CD6FA">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="WhereUserLikeToWork" EntitySet="WhereUserLikeToWorks" />
+          </AssociationSet>
+          <AssociationSet Name="Fk_UserIDWork" Association="Self.Fk_UserIDWork">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="WorkExperience" EntitySet="WorkExperiences" />
+          </AssociationSet>
+          <AssociationSet Name="AspNetUserRoles" Association="Self.AspNetUserRoles">
+            <End Role="AspNetRoles" EntitySet="AspNetRoles" />
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="TempStackOverFlowModelStoreContainer" CdmEntityContainer="TempStackOverFlowEntities3">
+          <EntitySetMapping Name="C__MigrationHistory">
+            <EntityTypeMapping TypeName="TempStackOverFlowModel.C__MigrationHistory">
+              <MappingFragment StoreEntitySet="__MigrationHistory">
+                <ScalarProperty Name="MigrationId" ColumnName="MigrationId" />
+                <ScalarProperty Name="ContextKey" ColumnName="ContextKey" />
+                <ScalarProperty Name="Model" ColumnName="Model" />
+                <ScalarProperty Name="ProductVersion" ColumnName="ProductVersion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Answers">
+            <EntityTypeMapping TypeName="TempStackOverFlowModel.Answer">
+              <MappingFragment StoreEntitySet="Answers">
+                <ScalarProperty Name="AnswerID" ColumnName="AnswerID" />
+                <ScalarProperty Name="QuestionID" ColumnName="QuestionID" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="Answer1" ColumnName="Answer" />
+                <ScalarProperty Name="Vote" ColumnName="Vote" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AspNetRoles">
+            <EntityTypeMapping TypeName="TempStackOverFlowModel.AspNetRole">
+              <MappingFragment StoreEntitySet="AspNetRoles">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AspNetUserClaims">
+            <EntityTypeMapping TypeName="TempStackOverFlowModel.AspNetUserClaim">
+              <MappingFragment StoreEntitySet="AspNetUserClaims">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="ClaimType" ColumnName="ClaimType" />
+                <ScalarProperty Name="ClaimValue" ColumnName="ClaimValue" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AspNetUserLogins">
+            <EntityTypeMapping TypeName="TempStackOverFlowModel.AspNetUserLogin">
+              <MappingFragment StoreEntitySet="AspNetUserLogins">
+                <ScalarProperty Name="LoginProvider" ColumnName="LoginProvider" />
+                <ScalarProperty Name="ProviderKey" ColumnName="ProviderKey" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AspNetUsers">
+            <EntityTypeMapping TypeName="TempStackOverFlowModel.AspNetUser">
+              <MappingFragment StoreEntitySet="AspNetUsers">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="EmailConfirmed" ColumnName="EmailConfirmed" />
+                <ScalarProperty Name="PasswordHash" ColumnName="PasswordHash" />
+                <ScalarProperty Name="SecurityStamp" ColumnName="SecurityStamp" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="PhoneNumberConfirmed" ColumnName="PhoneNumberConfirmed" />
+                <ScalarProperty Name="TwoFactorEnabled" ColumnName="TwoFactorEnabled" />
+                <ScalarProperty Name="LockoutEndDateUtc" ColumnName="LockoutEndDateUtc" />
+                <ScalarProperty Name="LockoutEnabled" ColumnName="LockoutEnabled" />
+                <ScalarProperty Name="AccessFailedCount" ColumnName="AccessFailedCount" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Badges">
+            <EntityTypeMapping TypeName="TempStackOverFlowModel.Badge">
+              <MappingFragment StoreEntitySet="Badges">
+                <ScalarProperty Name="BadgeID" ColumnName="BadgeID" />
+                <ScalarProperty Name="BadgeName" ColumnName="BadgeName" />
+                <ScalarProperty Name="BadgeCategory" ColumnName="BadgeCategory" />
+                <ScalarProperty Name="BadgeDescription" ColumnName="BadgeDescription" />
+                <ScalarProperty Name="BadgeType" ColumnName="BadgeType" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BadgesEarnedByUsers">
+            <EntityTypeMapping TypeName="TempStackOverFlowModel.BadgesEarnedByUser">
+              <MappingFragment StoreEntitySet="BadgesEarnedByUser">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="BadgeID" ColumnName="BadgeID" />
+                <ScalarProperty Name="DateOfEarned" ColumnName="DateOfEarned" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Bookmarks">
+            <EntityTypeMapping TypeName="TempStackOverFlowModel.Bookmark">
+              <MappingFragment StoreEntitySet="Bookmarks">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="QuestionID" ColumnName="QuestionID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CompaniesToExcludes">
+            <EntityTypeMapping TypeName="TempStackOverFlowModel.CompaniesToExclude">
+              <MappingFragment StoreEntitySet="CompaniesToExclude">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="CompanyToExclude" ColumnName="CompanyToExclude" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Educations">
+            <EntityTypeMapping TypeName="TempStackOverFlowModel.Education">
+              <MappingFragment StoreEntitySet="Education">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="Degree" ColumnName="Degree" />
+                <ScalarProperty Name="University" ColumnName="University" />
+                <ScalarProperty Name="FromYear" ColumnName="FromYear" />
+                <ScalarProperty Name="ToYear" ColumnName="ToYear" />
+                <ScalarProperty Name="Summary" ColumnName="Summary" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="IndustriesToExcludes">
+            <EntityTypeMapping TypeName="TempStackOverFlowModel.IndustriesToExclude">
+              <MappingFragment StoreEntitySet="IndustriesToExclude">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="IndustryToExclude" ColumnName="IndustryToExclude" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="JobProfiles">
+            <EntityTypeMapping TypeName="TempStackOverFlowModel.JobProfile">
+              <MappingFragment StoreEntitySet="JobProfile">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="JobType" ColumnName="JobType" />
+                <ScalarProperty Name="Role" ColumnName="Role" />
+                <ScalarProperty Name="JobSearchStatus" ColumnName="JobSearchStatus" />
+                <ScalarProperty Name="Industry" ColumnName="Industry" />
+                <ScalarProperty Name="MinAnnualSalary" ColumnName="MinAnnualSalary" />
+                <ScalarProperty Name="MinExperience" ColumnName="MinExperience" />
+                <ScalarProperty Name="MaxExperience" ColumnName="MaxExperience" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Questions">
+            <EntityTypeMapping TypeName="TempStackOverFlowModel.Question">
+              <MappingFragment StoreEntitySet="Questions">
+                <ScalarProperty Name="QuestionID" ColumnName="QuestionID" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="Question1" ColumnName="Question" />
+                <ScalarProperty Name="TotalViews" ColumnName="TotalViews" />
+                <ScalarProperty Name="Vote" ColumnName="Vote" />
+                <ScalarProperty Name="TimeOfAsk" ColumnName="TimeOfAsk" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tags">
+            <EntityTypeMapping TypeName="TempStackOverFlowModel.Tag">
+              <MappingFragment StoreEntitySet="Tags">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="QuestionID" ColumnName="QuestionID" />
+                <ScalarProperty Name="TagName" ColumnName="TagName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TechnologiesUsedAsStudents">
+            <EntityTypeMapping TypeName="TempStackOverFlowModel.TechnologiesUsedAsStudent">
+              <MappingFragment StoreEntitySet="TechnologiesUsedAsStudent">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="Technology" ColumnName="Technology" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TechnologiesUsedByUserInJobs">
+            <EntityTypeMapping TypeName="TempStackOverFlowModel.TechnologiesUsedByUserInJob">
+              <MappingFragment StoreEntitySet="TechnologiesUsedByUserInJob">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="Technologies" ColumnName="Technologies" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TechPreferNotToWorkWiths">
+            <EntityTypeMapping TypeName="TempStackOverFlowModel.TechPreferNotToWorkWith">
+              <MappingFragment StoreEntitySet="TechPreferNotToWorkWith">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="TechPeferNotToWorkWith" ColumnName="TechPeferNotToWorkWith" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TechWantToWorkWiths">
+            <EntityTypeMapping TypeName="TempStackOverFlowModel.TechWantToWorkWith">
+              <MappingFragment StoreEntitySet="TechWantToWorkWith">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="TechYouWantToWorkWith" ColumnName="TechYouWantToWorkWith" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="TempStackOverFlowModel.User">
+              <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="FullName" ColumnName="FullName" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="VisitedDays" ColumnName="VisitedDays" />
+                <ScalarProperty Name="GitHub" ColumnName="GitHub" />
+                <ScalarProperty Name="Twitter" ColumnName="Twitter" />
+                <ScalarProperty Name="Reputaion" ColumnName="Reputaion" />
+                <ScalarProperty Name="Location" ColumnName="Location" />
+                <ScalarProperty Name="LastSeen" ColumnName="LastSeen" />
+                <ScalarProperty Name="ProfileViews" ColumnName="ProfileViews" />
+                <ScalarProperty Name="AboutUser" ColumnName="AboutUser" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="EmailID" ColumnName="EmailID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WhereUserLikeToWorks">
+            <EntityTypeMapping TypeName="TempStackOverFlowModel.WhereUserLikeToWork">
+              <MappingFragment StoreEntitySet="WhereUserLikeToWork">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="Location" ColumnName="Location" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WorkExperiences">
+            <EntityTypeMapping TypeName="TempStackOverFlowModel.WorkExperience">
+              <MappingFragment StoreEntitySet="WorkExperience">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="JobTitle" ColumnName="JobTitle" />
+                <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+                <ScalarProperty Name="YearOfJoinning" ColumnName="YearOfJoinning" />
+                <ScalarProperty Name="Responsibilities" ColumnName="Responsibilities" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="AspNetUserRoles" TypeName="TempStackOverFlowModel.AspNetUserRoles" StoreEntitySet="AspNetUserRoles">
+            <EndProperty Name="AspNetRoles">
+              <ScalarProperty Name="Id" ColumnName="RoleId" />
+            </EndProperty>
+            <EndProperty Name="AspNetUsers">
+              <ScalarProperty Name="Id" ColumnName="UserId" />
+            </EndProperty>
+          </AssociationSetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

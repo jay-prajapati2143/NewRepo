@@ -1,0 +1,89 @@
+﻿
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>ASP.NET</h1>
+    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
+    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>Getting started</h2>
+        <p>Today : @DateTime.Now.ToShortDateString()</p>
+        <p>@DateTime.IsLeapYear(2017)</p>
+        <p>Last week this time : @((DateTime.Now - TimeSpan.FromDays(7)).ToShortDateString())</p>
+        @*<p>@DateTime.Now - @TimeSpan.FromDays(7)</p>*@
+
+        @{
+            var joe = new { Name = "Joe", Age = 33 };
+        }
+        <p>Age : @(joe.Age)</p>
+        @("<span>Hello World</span>")
+        @{
+            var quote = "The future depends on what you do today.";
+        }
+        <blockquote>@quote</blockquote>
+
+        @*@{
+            void RenderName(string name)
+            {
+                    <p> Name: <strong> @name </strong ></p>
+                        }
+        RenderName("Mahatma Ganghi");
+        RenderName("Martin Luthar King, Jr.");
+        }*@
+        @{var value = 223;}  
+
+        @if (value % 2 == 0) {
+
+
+<p>The value was even</p>
+            }
+            @*else
+            {
+                <p>The Value was Odd</p>
+            }*@
+        else if(value>=223){
+
+
+<p>The value is large.</p>
+            }
+            else
+            {
+                <p>The value is odd and small</p>
+            }
+
+        @switch (value) {
+                case 1:
+                <p>The value is 1!</p>
+                    break;
+                case 223:
+                <p>Your number is 223</p>
+                break;
+        }
+        
+        
+        
+
+        <p>
+            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
+            enables a clean separation of concerns and gives you full control over markup
+            for enjoyable, agile development.
+        </p>
+        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Get more libraries</h2>
+        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
+        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Web Hosting</h2>
+        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
+        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+    </div>
+</div>
