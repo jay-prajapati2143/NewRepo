@@ -1,0 +1,123 @@
+MIB
+
+11 companies are Connected
+Client = jamika - Richerd
+
+New Bussness Flow = new policy
+Andorsment = Update in Policy Detail
+like , Add Insured , name change etc.
+
+
+1. New Bussness Flow
+
+
+Rule Engine (condtions)
+  Acceptance Engine
+  dicline Engine - Not Accepted
+  Reffered Engine - there are chances to acceptance (allow)
+
+
+
+New Bussness flow
+Parish : eg Ahmedabad
+Community : eg. Sarkhej
+
+Comprehensive : your and opp.'s lose are cover
+third Party : opp's.  lose are cover
+
+Additional Insured
+
+Salvage Certificate :
+  A salvage certificate is issued when after the vehicle
+  has been declared as a total loss. 
+
+Vehicle Laden Weight
+  Laden weight means the net weight of a 
+  motor vehicle or trailer
+
+CSA : Customer Super Adviser
+
+Cover Note : Temporary Cirtificate
+DebitNote
+
+Insurance : Careers
+Insurance Plan : Careers Plans
+
+Binder ???
+
+Mortgagee
+
+
+
+
+Issue:
+1. if there is already fill data in some 
+fild there will problem will fecthing while renewle
+
+
+
+
+??????
+
+prospect Clients?
+  A Prospective customer , or prospect, 
+  is a person or organization interested
+  in making a purchase.
+
+Carrierwise Commission : commission for 
+  MIBL on insurance provider
+  
+Benefit appObjectTypes??
+Benefit AppObjects??
+Supplemental Form Configuration??
+Adjustment Variance??
+
+
+is LookUp code Uniqe for User?? 
+
+
+
+A No-Claim Discount (NCD) is an entitlement
+given to you if no claim has been made under
+your policy for a year or more with the 
+current/existing insurer. It reduces the 
+premium you have to pay for the following year.
+
+
+
+try
+Claim Request 
+
+A. ask about this to pradip sir
+
+ Discount ??
+ Vehicle Valuation settings??
+
+ minimum return fee in Add 
+ Endorsement fee configuration ??
+ short term rate config 
+ exchange rate configuration
+ EGov Exception Config
+ Supplemental Form Config
+ Epic Code Config
+ Outstanding 
+ Adjust client zero balance
+ Tool 
+ News later management
+ announcement and news
+ vehicle valuation report
+ Egov Validation History report
+
+???During Motor Vehicle Claim Form
+
+Driver's name input field is desable and empty 
+even there is validation error (Driver's name is required)
+submit form disabled 
+
+Adjustment Variance
+Why this is developed??
+
+
+if there is insurance is accepted but there are some insurance
+which are gone into  the refered case 
+at that time data will be stored in reffered case table??

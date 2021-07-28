@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Document</title>
+</head>
+<body>
+   <!-- <div ng-app="" ng-init="firstName='John'">
+    <p>My first expression: {{ 5 + 5 }}</p>
+       <p>Name : <input type="text" ng-model="name"></p>
+       <p>My name is <span ng-bind="firstName"></span></p>
+       <p>{{firstName}}</p>
+   </div>  -->
+
+   <div ng-app="myApp"  ng-controller="myCtrl" 
+        ng-init="myColor='green'; quantity=4;cost=5; person={firstName:'Jay',lastName:'Prajapati'}; points=[1,13,23,221];names=['jay','Tirth','Bhargav']">
+       FirstName: <input type="text" ng-model="fName"><br>
+       LastName: <input type="text" ng-model="lName"><br>
+       <br>
+       
+       
+       <p>Full Name: {{fName + " " + lName}}</p>
+       <input style="background-color: {{myColor}}" ng-model="myColor">
+       <p>Total in dollar: {{quantity * cost}}</p>
+       <p>Total in dollar: <span ng-bind="quantity * cost"></span></p>
+       <p>The name is {{person.firstName + " "+person.lastName}}</p>
+       <p>The third result is {{points[2]}}</p>
+       <p>Third result using ng-bind : <span ng-bind="points[2]"></span></p>
+       Quantity : <input type="number" ng-model="quantity">
+       costs: <input type="number" ng-model="cost">
+       Total in dollar: {{quantity * cost | currency}}
+       
+       <w3-test-directive></w3-test-directive>
+       <div w3-test-directive></div>
+       <div class="w3-test-directive"></div>
+<!-- directive: w3-test-directive -->
+       <ul>
+           <li ng-repeat="x in names">
+               {{x}}
+           </li>
+       </ul>
+
+   </div>
+
+
+   
+   <script>
+       var app = angular.module('myApp', []);
+       app.controller('myCtrl', function($scope){
+           $scope.fName = "Jay";
+           $scope.lName = "Prajapati";
+       });
+       
+       app.directive("w3TestDirective",function() {
+           return {
+               restrict : "EA",
+               template : "<h1>Made by a directive!</h1>"
+           };
+       });
+
+
+
+       </script>
+</body>
+
+</html>

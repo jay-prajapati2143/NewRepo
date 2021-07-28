@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+<body ng-app="myApp">
+    <h1>{{color}}</h1>
+    <div ng-controller="myCtrl">
+        <h2>{{color}}</h2>
+    </div>
+    <h2>{{color | json}}</h2>
+</body>
+<script>
+    var app = angular.module('myApp',[]);
+    app.run(function($rootScope){
+        $rootScope.color = 'blue';
+    });
+    app.controller('myCtrl', function($scope){
+        $scope.color = "red";
+    });
+</script>
+</html>

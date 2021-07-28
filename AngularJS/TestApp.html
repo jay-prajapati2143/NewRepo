@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+<body>
+    <div ng-app="testApp" ng-controller="nameCtrl">
+        <ul>
+            <li ng-repeat = "x in names">{{x.name}}</li>
+        </ul>
+        <table>
+            <thead>
+                <th>Name</th>
+                <th>Country</th>
+            </thead>
+            
+            <tr ng-repeat="x in names | orderBy: 'country' | filter : 't'">
+                <td>{{x.name}}</td>
+                <td>{{x.country}}</td>
+            </tr>
+        </table>
+    </div>
+    <script src="namesController.js"></script>
+</body>
+</html>
