@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+
+<body>
+
+    
+
+    <div ng-app="myApp" ng-controller="myCtrl">
+
+        <p>Select a car:</p>
+        
+        <select ng-model="selectedCar">
+        <option ng-repeat="x in cars" ng-value="{{x}}">{{x}}</option>
+        </select>
+        
+        <h1>You selected a  {{selectedCar}}</h1>
+        
+        </div>
+        
+        <script>
+        var app = angular.module('myApp', []);
+        app.controller('myCtrl', function($scope) {
+            $scope.cars = ["audi","bmw","ferrary","Maruti","Tata"];
+        });
+        </script>
+        </body>
+        </html>
+
+        
+ <!-- <div ng-app="tempApp" ng-controller="tempCtrl">
+        <select ng-model="selectedCar" ng-options="x in cars">
+            <option  ng-value="{{x}}">{{x}}</option>
+        </select>
+        <h3>you have selected : {{selectedCar}}</h3>
+    </div>
+    <script>
+        var app= angular.module("tempApp",[])
+        app.controller("tempCtrl",function($scope){
+            $scope.cars =["audi","bmw","ferrary","Maruti","Tata"];
+        });
+    </script>
+</body>
+</html>  -->

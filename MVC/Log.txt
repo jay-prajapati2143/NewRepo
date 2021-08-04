@@ -1,0 +1,203 @@
+Monday : 12/07/2021
+Learn about MVC - Refer MVC Architecture, learn Model , View, Controller, MVC Version History form TutorialTeacher, Build First MVC Application.
+Tuesday : 13/07/2021
+Learn about MVC - Refer MVC Folder Structure, Routing, Controller, Action Method, Action Selectors, ActionVerbs, Model, View form Tutorialsite and done Practice on that. 
+Wednesday : 14/07/2021
+Learn about MVC - Refer Integrate Model, View & Controller, Model Binding, Create Edit View and done Practice on that.
+Thursday : 15/07/2021
+Learn about MVC - Razor Syntax and Html Helpers, ViewBag, ViewData,TempData
+Friday : 16/07/2021
+learn about MVC -  Authentication and Authorization
+Moday : 19/07/2021
+learn about - Start  implement(Convert) StackOverFlow project(project assigned during Trainnig)  in MVC
+Tuesday : 20/07/2021
+implement Usercontroller, QuestionController, and View in StackOverflow Project 
+Wednesday : 21/07/2021
+Learn about SVN Repository and Basic Operation  - 2hr
+implement  view and action method and modify some View, start implement Authentication and Authorization in StackOverFlow Project -  5.50hr
+
+thursday : 22/07/2021
+Implement Login and Register Action Method and View,Custome Filter, Redirection Validation in StackOverFlow Project in MVC, Attend Knowledge Session  
+
+Monday : 26/07/2021
+learn about sending email in MVC project, 
+Start Learning Angular JS- Expression, Modules,Directives
+Explore Mibl Site Adming Side Master Management
+Comprehensive Premium Financing config,
+3rd party Fire and Theft, 
+and 3rd party premium Financing config,
+Late fee, Basic, Renewal config,
+payment Remiders, Vehicle master.
+
+
+Attend KT Session for Mibl site (UI)
+
+Tuesday: 27/07/2021
+
+2hr - Explore MIBL site 
+Type of work: Development
+Resource role: Trainee Engineer
+Consumed Efforts : 2.00
+RM# : 468 
+Description: Explore MIBL Site - Report a collision 
+Risk Note:
+Delay Note:
+Other information :
+
+2hr - Learning AngularJS
+Type of work: Development
+Resource role: Trainee Engineer
+Consumed Efforts : 2.00
+RM# : 468 
+Description: Revise the yesterday angularJS topics, Learn about Model, Data Binding and done Pracitce excercise for that topics
+Risk Note:
+Delay Note:
+Other information :
+
+
+2hr - Learning AngularJS 
+Type of work: Development
+Resource role: Trainee Engineer
+Consumed Efforts : 2.5
+RM# : 468
+Description: Learn about Controllers, Scopes,Filters and done Practice Excercise for that.
+Risk Note:
+Delay Note:
+Other information :
+
+2hr - Functional KT 
+Type of work: Development
+Resource role: Trainee Engineer
+Consumed Efforts : 2.00
+RM# : 468
+Description: Attend Functional KT of MIBL Site, Benefit AppObjects,Exchange Rate configuaration,Mortagagee Masters Config, User Access Management, Rule Engine config, Minimum Deposit Override
+Risk Note:
+Delay Note:
+Other information :
+
+Wednesday : 28/07/2021
+
+
+Type of work: Development
+Resource role: Trainee Engineer
+Consumed Efforts : 2.00
+RM# : 468
+Description: Mibl Site Explore Carrier Configuration, Vision Managament , Epic Management.
+
+2hr - 
+Type Of Work: Development
+Resource role: Trainee Engineer
+Consumed Efforts: 2.00hrs
+RM#: 468
+Description: Learning AngularJS- Revise yesterday's topics, Learn about Services, Http and done Practice for that.
+
+2hr - 
+Type Of Work: Development
+Resource role: Trainee Engineer
+Consumed Efforts: 2.00hrs
+RM#: 468
+Description: Learning AngularJS - Learn about Tables, Select, SQL, DOM and done Practice form that.
+
+2.5hrs - 
+Type Of Work: Development
+Resource role: Trainee Engineer
+Consumed Efforts: 2.5hrs
+RM#: 468
+Description: MIBL Project SourceCode Setup - Checkout the code of FrontEnd side and Admin side form SVN and configure the code according to my local
+restore MIBL project Database in Local.
+Risk Note: after chekout the code there was  Reference rrors in code.
+DelayNote: task take more time because: try to add the reference in code which are note found by the compiler.
+
+
+
+Thursday : 29/07/2021
+
+Type Of Work: Development
+Resource role: Trainee Engineer
+Consumed Efforts: 2hrs
+RM#: 468
+Description: MIBL Project SourceCode Setup - Resolve Referenece Errors 
+restore MIBL project Database in Local.
+Risk Note: after chekout the code there was  Reference rrors in code.
+DelayNote: task take more time because: try to add the reference in code which are note found by the compiler.
+
+
+Type Of Work: Development
+Resource role: Trainee Engineer
+Consumed Efforts: 2.00hrs
+RM#: 468
+Description: Learning AngularJS - Learn about Events, Forms, Validation and practice that
+
+Type Of Work: Development
+Resource role: Trainee Engineer
+Consumed Efforts: 2.00hrs
+RM#: 468
+Description: Explore MIBL Site FrontEnd SourceCode ProposalForm
+
+
+Type Of Work: Development
+Resource role: Trainee Engineer
+Consumed Efforts: 2.00hrs
+RM#: 468
+Description: Explore MIBL Site FrontEnd SourceCode ProposalForm controller, Tampletes, Get Request Api Function.
+
+Friday : 30/07/2021
+
+Type Of Work: Development
+Resource role: Trainee Engineer
+Consumed Efforts: 2.00hrs
+RM#: 468
+Description: Explore MIBL Site FrontEnd SourceCode ProposalForm controller, Tampletes.
+
+Type Of Work: Development
+Resource role: Trainee Engineer
+Consumed Efforts: 2.00hrs
+RM#: 468
+Description: Explore MIBL Site FrontEnd SourceCode Tampletes.
+
+Type Of Work: Development
+Resource role: Trainee Engineer
+Consumed Efforts: 2.00hrs
+RM#: 468
+Description: Explore MIBL Site FrontEnd SourceCode ProposalForm Controller, Tampletes.
+
+Type Of Work: Development
+Resource role: Trainee Engineer
+Consumed Efforts: 2.00hrs
+RM#: 468
+Description: MIBL site Client Data understading and Check and correction In excel sheet form Cover note and debit note.
+
+
+Type Of Work: Development
+Resource role: Trainee Engineer
+Consumed Efforts: 0.5hr
+RM#: 468
+Description: MIBL site Client Data Check and correction In excel sheet form Cover note and debit note.
+
+
+Tuesday : 03/08/2021
+
+Type Of Work: Development
+Resource role: Trainee Engineer
+Consumed Efforts: 2.00hr
+RM#: 468
+Description: MIBL site SourceCode Explore, Add Input type Question in template in using ng-model, and get data in proposalFormReference table in json format.
+
+
+Type Of Work: Development
+Resource role: Trainee Engineer
+Consumed Efforts: 2.00hr
+RM#: 468
+Description: MIBL site SourceCode Explore, Add radio type Question in template in using rx-model(with already existing data in database), and get data in proposalFormReference table in json format.
+
+Type Of Work: Development
+Resource role: Trainee Engineer
+Consumed Efforts: 2.00hr
+RM#: 468
+Description: MIBL site SourceCode Explore, LookUpTable Calls, refer Client Table, propasalformReference table .
+
+Type Of Work: Development
+Resource role: Trainee Engineer
+Consumed Efforts: 2.00hr
+RM#: 468
+Description: MIBL site SourceCode Explore ProposalFormOperationController and theire Views.

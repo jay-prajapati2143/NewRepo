@@ -13,19 +13,29 @@
        OrderBy:
        <select ng-model="order" ng-options="x for x in type"></select>
        <ul>
-           <li ng-repeat="x in names | filter : myInput | orderBy : order">
-               {{x.name}}
+           <li ng-repeat="x in name | filter : myInput | orderBy : order">
+               {{x}}
            </li>
        </ul> 
+       <table>
+           <thead>
+               <th>Name</th>
+               <th>Country</th>
+           </thead>
+           <tr ng-repeat="x in names | filter : myInput | orderBy : order">
+               <td>{{x.name}}</td>
+               <td>{{x.country}}</td>
+           </tr>
+       </table>
     </div>
 </body>
 <script>
     var app = angular.module('myApp',[]);
     app.run(function($rootScope){
-        $rootScope.names = {name : "Jay", country : 'USA'},
+        $rootScope.name = ['Jay','Tirth','Dharmik','Viral','Jevik'];
+        $rootScope.names = [{name : "Jay", country : 'USA'},
         {name : "Tirth", country : 'India'},
-        {name : "Dharmik", country : 'Englend'};
-        //['Jay','Tirth','Dharmik','Viral','Jevik'];
+        {name : "Dharmik", country : 'Englend'}]; 
         $rootScope.type = ['name','country'];
     });
     app.controller('namesCtrl', function($scope){

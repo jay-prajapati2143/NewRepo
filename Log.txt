@@ -83,3 +83,26 @@ Resource role: Trainee Engineer
 Consumed Efforts : 2.5
 RM# : 468
 Description: 
+
+Wednesday : 04/08/2021
+
+2hr - Mibl Site Explore
+Type of work: Development
+Resource role: Trainee Engineer
+Consumed Efforts : 2hrs
+RM# : 468
+Description: MIBL Site Explore , Add Question in database , model class and model map class and try to bind the data.
+
+2hr - Mibl Site Explore
+Type of work: Development
+Resource role: Trainee Engineer
+Consumed Efforts : 2hrs
+RM# : 468
+Description: MIBL Site Explore , Add Question in database , model class and model map class and try to bind the data.
+
+2hr - Mibl Site Explore
+Type of work: Development
+Resource role: Trainee Engineer
+Consumed Efforts : 2hrs
+RM# : 468
+Description: MIBL Site Explore , Add Question in database , model class and model map class and try to bind the data.

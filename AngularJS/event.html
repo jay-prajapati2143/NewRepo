@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+
+</head>
+<body>
+    <div ng-app="myApp">
+        <!-- <div ng-controller="myCtrl">
+
+        </div> -->
+        <div ng-controller="counting">
+            <!-- <button ng-click="countValue = countValue + 1">Click Me</button> -->
+            <button ng-click="count()">Click Me</button>
+            <p>{{countValue}}</p>
+
+            <h1 ng-mousemove="tempFunc($event)">Mouse Over</h1>
+
+            <p>coordinates : {{x + ', ' + y}}</p>
+
+            <button ng-click="myFunc()">Show/Hide</button>
+
+            <div ng-show="showMe">
+                <h1>Menu:</h1>
+                <div>Pizza</div>
+                <div>Pasta</div>
+                <div>Pasce</div>
+            </div>
+        </div>
+    </div>
+    <script>
+        var app= angular.module('myApp', []);
+        // app.controller('myCtrl', function(){
+        //     $scope.myFunc = function(myE){
+        //         $scope.x = myE.clientX;
+        //         $scope.y = myE.clientY;
+        //     }
+        // });
+
+        app.controller('counting', function($scope){
+            $scope.countValue = 0;
+            $scope.showMe = false;
+            $scope.count = function(){
+                
+                $scope.countValue++;
+            };
+            
+            $scope.myFunc = function(){
+                $scope.showMe = !$scope.showMe;
+            };
+
+            $scope.tempFunc = function(myEvent){
+                $scope.x = myEvent.clientX;
+                $scope.y = myEvent.clientY;
+            }
+        });
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+
+</head>
+<body ng-app="">
+    <form>
+        Check to show a header:
+        <input type="checkbox" ng-model="myVar"/>
+        Pick a Topic :
+        <input type="radio" ng-model="temp" value="dogs">Dogs
+        <input type="radio" ng-model="temp" value="tuts">Tutorials
+        <input type="radio" ng-model="temp" value="cars">Cars
+        <br>
+        
+    </form>
+    <h1 ng-show="myVar">My Header</h1>
+    <h2>{{temp}}</h2>
+</body>
+</html>

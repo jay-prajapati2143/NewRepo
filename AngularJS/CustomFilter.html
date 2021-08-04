@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+
+</head>
+<body ng-app="myApp">
+    <ul  ng-controller="namesCtrl">
+        <li ng-repeat="x in names">
+            {{x | myFormat}}
+        </li>
+    </ul>    
+    <div ng-controller="mylocation">
+        <h3> {{myUrl}}</h3>
+        <h1> {{myWelcome.data}}</h1>
+        <h2>{{myHeader}}</h2>
+        <h3>{{currentTime}}</h3>
+    </div>
+    <!--  -->
+
+    <script>
+        var app = angular.module('myApp',[]);
+        app.filter('myFormat', function(){
+            return function(x){
+                var i, c, txt = "";
+                for(i=0; i<x.length; i++){
+                    c = x[i];
+                    if(i%2==0){
+                        c = c.toUpperCase();
+                    }
+                    txt +=c;
+                }
+                return txt;
+            };
+        });
+
+        app.controller('namesCtrl', function($scope){
+            $scope.names= ['Jani', 'Carl', 'Margareth', 'Hege', 'Joe', 'Gustav', 'Birgit', 'Mary', 'Kai'];
+            // $scope.myUrl = $location.absUrl();
+        })
+        app.controller('mylocation', function($scope, $location, $http, $timeout, $interval){
+            $scope.myUrl = $location.absUrl();
+            $scope.myHeader = "Hello World";
+            
+            $http.get("https://reqres.in/api/products/3").then(function (response){
+                $scope.myWelcome = response.data;
+            });
+            $timeout(function(){
+                $scope.myHeader = "How are you today??";
+            },5000);
+            $interval(function(){
+                $scope.currentTime = new Date().toLocaleTimeString();
+            },1000);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+
+</head>
+<body>
+    <table ng-app="myApp" ng-controller="myCtrl">
+        <thead>
+            <th>Index</th>
+            <th>Name</th>
+            <th>City</th>
+        </thead>
+        <tr ng-repeat = "x in dummy">
+            <td>{{$index + 1}}</td>
+            <td ng-if="$even" style="background-color: skyblue;">{{x.name}}</td>
+            <td ng-if="$odd" style="background-color: lightcyan;">{{x.name}}</td>
+            <td ng-if="$even" style="background-color: skyblue;">{{x.city}}</td>
+            <td ng-if="$odd" style="background-color: lightcyan;">{{x.city}}</td>
+            
+        </tr>
+    </table>    
+    <script>
+        var app = angular.module('myApp',[])
+        app.controller('myCtrl',function($scope){
+            $scope.dummy = [
+                {
+                    name: "Harry Potter",
+                    city: "London"
+                },
+                {
+                    name: "Don Quixote",
+                    city: "Madrid"
+                },
+                {
+                    name : "Joan of Arc",
+                    city : "Paris"
+                },
+                {
+                    name : "Rosa Park",
+                    city : "Alabama"
+                }
+            ];
+
+        });
+    </script>
+</body>
+</html>

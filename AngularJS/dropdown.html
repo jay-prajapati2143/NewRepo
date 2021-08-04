@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=evice-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+<body>
+    <div ng-app="tempApp">
+        <div ng-controller="tempCtrl">
+            <select ng-model="selectedName">
+                <option ng-repeat="x in names" ng-value="{{x}}">{{x.name}}</option>
+            </select>
+            <h4>{{selectedName.name}}</h4>
+        </div>
+    </div>
+</body>
+<script>
+    var app = angular.module("tempApp",[])
+    app.controller("tempCtrl",function($scope) {
+        $scope.names = [{name:"Jay", city: "Vijapur"},{name :"Tirth", city: "Thaltej"},{ name :"Bhargav", city: "Naroda"}];
+    });
+</script>
+</html>
