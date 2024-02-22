@@ -10,6 +10,7 @@ namespace MyApp.Controllers
     {
         public ActionResult Index()
         {
+            const int test = 34;
             return View();
         }
 
