@@ -30,5 +30,49 @@ namespace MyApp.Controllers
 
             return View();
         }
+
+        public ActionResult Contacfadft()
+        {
+            ViewBag.Message = "Your contact page.";
+
+            var test = "Demo"
+
+            return View();
+        }
+
+        public ActionResult Contyurtuact()
+        {
+            ViewBag.Message = "Your contact page.";
+
+            var test = "Demo"
+
+            return View();
+        }
+
+        public ActionResult Contdffact()
+        {
+            ViewBag.Message = "Your contact page.";
+
+            var test = "Demo"
+
+            return View();
+        }
+        public ActionResult Contacdfadft()
+        {
+            ViewBag.Message = "Your contact page.";
+
+            var test = "Demo"
+
+            return View();
+        }
+
+        public ActionResult Contactdfj()
+        {
+            ViewBag.Message = "Your contact page.";
+
+            var test = "Demo"
+
+            return View();
+        }
     }
 }
