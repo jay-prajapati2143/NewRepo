@@ -25,6 +25,8 @@ namespace MyApp.Controllers
         {
             ViewBag.Message = "Your contact page.";
 
+            var test = "Demo"
+
             return View();
         }
     }
