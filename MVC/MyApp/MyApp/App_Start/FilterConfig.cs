@@ -8,6 +8,12 @@ namespace MyApp
         public static void RegisterGlobalFilters(GlobalFilterCollection filters)
         {
             filters.Add(new HandleErrorAttribute());
+
+            //dfadhfadf dslkfhadsfads]
+            //    fads
+            //    fadsfjladhsfasdf
+            //    asdfadkshfad;fjadsf
+
         }
     }
 }
