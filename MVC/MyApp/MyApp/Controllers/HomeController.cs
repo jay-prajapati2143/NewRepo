@@ -17,6 +17,7 @@ namespace MyApp.Controllers
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
+            var check = "this is test commit";
 
             return View();
         }
